@@ -17,7 +17,7 @@ public class MazeSolver {
 	}
 	
 	public boolean isSolvable() {
-		return true;
+		return solveMazeRecursively(this.getNumRows(), this.getNumColumns());
 	}
 	
 	public boolean solveMazeRecursively(int row, int col) {
