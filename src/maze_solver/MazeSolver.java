@@ -3,6 +3,7 @@ package maze_solver;
 public class MazeSolver {
 	
 	private String[][] maze;
+	private int[][] pathScoring;
 	private boolean[][] visited;
 	private boolean[][] solution;
 	private int numRows;
