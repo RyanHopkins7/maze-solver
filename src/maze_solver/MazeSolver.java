@@ -9,7 +9,7 @@ public class MazeSolver {
 	private int numColumns;
 	
 	public void drawMaze() {
-		
+		System.out.println(numRows + ", " + numColumns);
 	}
 	
 	public void printMaze() {
