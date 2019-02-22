@@ -1,3 +1,4 @@
+package maze_solver;
 
 public class MazeSolver {
 	
