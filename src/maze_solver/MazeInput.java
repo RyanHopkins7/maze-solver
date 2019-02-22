@@ -8,7 +8,7 @@ public class MazeInput {
 	public static void initializeMazeSolver(MazeSolver solver) {
 
 		// Instantiated reader in initializeMazeSolver method because 
-		// closing a scanner object also closes the input source
+		// closing a Scanner object also closes the input source
 		Scanner reader = new Scanner(System.in);
 		
 		solver.setNumRows(getNumRows(reader));

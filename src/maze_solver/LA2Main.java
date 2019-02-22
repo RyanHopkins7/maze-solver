@@ -21,3 +21,4 @@ public class LA2Main {
 	}
 
 }
+
