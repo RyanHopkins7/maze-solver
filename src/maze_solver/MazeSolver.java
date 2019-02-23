@@ -12,29 +12,29 @@ public class MazeSolver {
 
 		int totalCells = getNumRows() * getNumColumns();
 		int totalObstacles = 0;
-		maze = new String[getNumRows()][getNumColumns()];
-		pathScoring = new int[getNumRows()][getNumColumns()];
-		visited = new boolean[getNumRows()][getNumColumns()];
+		this.maze = new String[getNumRows()][getNumColumns()];
+		this.pathScoring = new int[getNumRows()][getNumColumns()];
+		this.visited = new boolean[getNumRows()][getNumColumns()];
 
 		for (int i = 0; i < getNumRows(); i++) {
 			for (int j = 0; j < getNumColumns(); j++) {
 
 				if (totalObstacles >= totalCells / 3) {
-					maze[i][j] = String.valueOf((int) (Math.random() * 99 + 1));
+					this.maze[i][j] = String.valueOf((int) (Math.random() * 99 + 1));
 				} else {
-					if (Math.random() < .33) {
-						maze[i][j] = "#";
+					if (Math.random() < .25) {
+						this.maze[i][j] = "#";
 						totalObstacles++;
 					} else {
-						maze[i][j] = String.valueOf((int) (Math.random() * 99 + 1));
+						this.maze[i][j] = String.valueOf((int) (Math.random() * 99 + 1));
 					}
 				}
 
 			}
 		}
 		
-		maze[0][0] = "S";
-		maze[getNumRows() - 1][getNumColumns() - 1] = "D";
+		this.maze[0][0] = "S";
+		this.maze[getNumRows() - 1][getNumColumns() - 1] = "D";
 
 	}
 
