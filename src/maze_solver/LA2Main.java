@@ -9,9 +9,11 @@ public class LA2Main {
 		// gets row and col data from user, creates maze, sets fields in MazeSolver
 		MazeInput.initializeMazeSolver(solver);
 
-		//for (int i = 1; i <= 3; i++) {
+		for (int i = 1; i <= 3; i++) {
 
-			//System.out.println("******Maze #" + i + "******");
+			solver.drawMaze();
+
+			System.out.println("******Maze #" + i + "******");
 			System.out.println("Start drawing the maze...");
 			System.out.println("The maze is as below:");
 			solver.printMaze();
@@ -24,7 +26,7 @@ public class LA2Main {
 
 			System.out.println();
 
-		//}
+		}
 
 	}
 

@@ -13,7 +13,6 @@ public class MazeInput {
 		
 		solver.setNumRows(getNumRows(reader));
 		solver.setNumColumns(getNumCols(reader, solver.getNumRows()));
-		solver.drawMaze();
 		
 		reader.close();
 
