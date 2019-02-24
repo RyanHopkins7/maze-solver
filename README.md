@@ -3,8 +3,6 @@ A project for my Computer Science 2 class. Generates three mazes with dimensions
 
 I used the Eclipse IDE for this project. To run code, download or clone this repository and open it in Eclipse. 
 
-See Maze Solver SLC Report.docx for documentataion and prompt.pdf for prompt. 
-
 ## Summarized version of the prompt:
 
 #### Create an application Maze Solver that can:
