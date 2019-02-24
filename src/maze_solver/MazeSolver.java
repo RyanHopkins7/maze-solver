@@ -67,7 +67,7 @@ public class MazeSolver {
 
 		for (int i = 0; i < getNumRows(); i++) {
 			for (int j = 0; j < getNumColumns(); j++) {
-				if (this.fieldCosts[i][j] < lowestCost && !this.visited[i][j] && !this.maze[i][i].equals("#")) {
+				if (this.fieldCosts[i][j] < lowestCost && !this.maze[i][j].equals("#") && !this.visited[i][j]) {
 					lowestCost = this.fieldCosts[i][j];
 				}
 			}
@@ -79,19 +79,24 @@ public class MazeSolver {
 		
 		for (int i = 0; i < getNumRows(); i++) {
 			for (int j = 0; j < getNumColumns(); j++) {
-				if (lowestCost == this.fieldCosts[i][j] && !this.visited[i][j] && !this.maze[i][i].equals("#")) {
+				if (lowestCost == this.fieldCosts[i][j] && !this.maze[i][j].equals("#") && !this.visited[i][j]) {
 					if (i == getNumRows() - 1 && j == getNumColumns() - 1) {
 						return true;
 					}
+					this.visited[i][j] = true;
 					this.numCoins += Integer.parseInt(maze[i][j]);
 					this.maze[i][j] = "+";
-					this.visited[i][j] = true;
 					solveMazeRecursively(i, j);
 				}
 			}
 		}
 		
-		return true;
+		if (this.visited[getNumRows() - 2][getNumColumns() - 1] 
+				|| this.visited[getNumRows() - 1][getNumColumns() - 2]) {
+			return true;
+		} else {
+			return false;
+		}
 		
 	}
 	

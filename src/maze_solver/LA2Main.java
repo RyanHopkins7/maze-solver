@@ -15,16 +15,12 @@ public class LA2Main {
 			System.out.println("Start drawing the maze...");
 			System.out.println("The maze is as below:");
 			solver.printMaze();
-			
-			System.out.println(solver.isSolvable());
-			solver.printResult();
 
-			/*if (solver.isSolvable()) {
-				solver.solveMazeRecursively(solver.getNumRows(), solver.getNumColumns());
+			if (solver.isSolvable()) {
 				solver.printResult();
 			} else {
 				System.out.println("Sorry, no solution can be found for this maze!");
-			}*/
+			}
 
 			System.out.println();
 
