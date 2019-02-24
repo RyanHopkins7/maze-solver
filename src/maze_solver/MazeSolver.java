@@ -26,7 +26,7 @@ public class MazeSolver {
 				if (totalObstacles >= totalCells / 3) {
 					this.maze[i][j] = String.valueOf((int) (Math.random() * 99 + 1));
 				} else {
-					if (Math.random() < .5) {
+					if (Math.random() < .25) {
 						this.maze[i][j] = "#";
 						totalObstacles++;
 					} else {
@@ -58,8 +58,6 @@ public class MazeSolver {
 
 	public boolean solveMazeRecursively(int row, int col) {
 		
-		System.out.println("executed");
-		
 		calculateRowCost(row + 1, col);
 		calculateRowCost(row, col + 1);
 		calculateRowCost(row - 1, col);
@@ -69,15 +67,19 @@ public class MazeSolver {
 
 		for (int i = 0; i < getNumRows(); i++) {
 			for (int j = 0; j < getNumColumns(); j++) {
-				if (this.fieldCosts[i][j] < lowestCost && !this.visited[i][j] && !this.maze[i][j].equals("#")) {
+				if (this.fieldCosts[i][j] < lowestCost && !this.visited[i][j] && !this.maze[i][i].equals("#")) {
 					lowestCost = this.fieldCosts[i][j];
 				}
 			}
 		}
 		
+		if (lowestCost == this.fieldCosts[0][0]) {
+			return false;
+		}
+		
 		for (int i = 0; i < getNumRows(); i++) {
 			for (int j = 0; j < getNumColumns(); j++) {
-				if (lowestCost == this.fieldCosts[i][j] && !this.visited[i][j] && !this.maze[i][j].equals("#")) {
+				if (lowestCost == this.fieldCosts[i][j] && !this.visited[i][j] && !this.maze[i][i].equals("#")) {
 					if (i == getNumRows() - 1 && j == getNumColumns() - 1) {
 						return true;
 					}
@@ -89,19 +91,12 @@ public class MazeSolver {
 			}
 		}
 		
-		return false;
+		return true;
 		
 	}
 	
 	// Helper method for solveMazeRecursively
 	private void calculateRowCost(int row, int col) {
-		/*if (row < getNumRows() 
-				&& col < getNumColumns()
-				&& row >= 0
-				&& col >= 0) {
-			System.out.println(this.maze[row][col].equals("#"));
-		}*/
-		
 		if (row < getNumRows() 
 				&& col < getNumColumns()
 				&& row >= 0
