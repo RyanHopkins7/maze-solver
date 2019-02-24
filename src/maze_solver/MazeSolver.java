@@ -63,10 +63,10 @@ public class MazeSolver {
 
 	public boolean solveMazeRecursively(int row, int col) {
 		
-		calculateRowCost(row + 1, col);
-		calculateRowCost(row, col + 1);
-		calculateRowCost(row - 1, col);
-		calculateRowCost(row, col - 1);
+		calculateCellCost(row + 1, col);
+		calculateCellCost(row, col + 1);
+		calculateCellCost(row - 1, col);
+		calculateCellCost(row, col - 1);
 		
 		// Find lowest cost in fieldCosts that has not already been visited and is not an obstacle
 		double lowestCost = this.fieldCosts[0][0];
@@ -121,7 +121,7 @@ public class MazeSolver {
 	
 	// Helper method for solveMazeRecursively
 	// Sets cost in fieldCosts for cell in [row, col] if row & col in range and cell is not an obstacle or visited
-	private void calculateRowCost(int row, int col) {
+	private void calculateCellCost(int row, int col) {
 		if (row < getNumRows() 
 				&& col < getNumColumns()
 				&& row >= 0
