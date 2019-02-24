@@ -5,9 +5,9 @@ I used the Eclipse IDE for this project. To run code, download or clone this rep
 
 See Maze Solver SLC Report.docx for documentataion and prompt.pdf for prompt. 
 
-##Summarized version of the prompt:
+## Summarized version of the prompt:
 
-###Create an application Maze Solver that can:
+### Create an application Maze Solver that can:
   1)	Generate a maze (a 2d array of strings) 
     a.	Number of rows and columns are given by the user and must be in the range [5,10]. Number of rows cannot equal number of columns.
     b.	Must validate input. If input is invalid, repeatedly ask for valid input.
